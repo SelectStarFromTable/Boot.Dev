@@ -11,13 +11,13 @@ class Program
         var content = await DownloadStringAsync(url);
         var words = content.Split(' ',StringSplitOptions.RemoveEmptyEntries);
         var wordCount = words.Length; //71307
-        Console.WriteLine(wordCount);
-        //count letters
+        Console.WriteLine(wordCount.ToString() + " words found in frankenstein.txt file.");
+        Console.WriteLine();
+        //count letters in array ..
         char [] letters =  ['a','b','c'];
-        //var letter = content.ToLower().Count(c => c == 'a');//26743
         foreach (var item in letters) {
             var letter = content.ToLower().Count(c => c == item);
-            Console.WriteLine(letter);
+            Console.WriteLine(item.ToString() + " character total " + letter.ToString());
         }
 
     }
